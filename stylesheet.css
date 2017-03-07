@@ -1,3 +1,14 @@
+div {
+    display: block;
+}
+
+#banner {
+    background:url('http://www.discoverhongkong.com/common/images_awc2/thematic-banner-2016/home-banner-large.jpg');
+    width:100%;
+    background-color:#808080;
+    min-height:209px;
+}
+
 element.style {
 }
 html {
