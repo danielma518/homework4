@@ -22,14 +22,14 @@
         <div class="row">
             <div class="col-md-6">
 		    <h1>Javascript & jQuery Exercises</h1>
-                <h2> Calculator </h2>
+                <h2>Attendance hour calculator </h2>
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label for="amount">Amount of books</label>
+                            <label for="amount">Number of hours per lecture</label>
                             <input class="form-control" type="text" id="amount" value="3">
-                            <label for="unit">Unit price</label>
-                            <input class="form-control" type="text" id="unit" value="100">
+                            <label for="unit">Number of lectures attended</label>
+                            <input class="form-control" type="text" id="unit" value="20">
                         </div>
                     </div>
                 </div>
@@ -41,7 +41,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label for="total">Total cost:</label>
+                            <label for="total">Total hours:</label>
                             <input class="form-control" type="text" id="total">
                         </div>
                     </div>
@@ -107,39 +107,36 @@
                     })
                 </script>
 
-                <h2>Move the bar chart in a batch</h2>
+                <h2>See how much carbonhydrate(g) you get for eating an apple (125g)</h2>
                 <div class="row">
                     <div class="col-md-12">
                         <div id="myfigure" class="chart">
-                            <div class="bar-block" style="height: 80px; left:5"> 80 </div>
-                            <div class="bar-block" style="height: 60px; left:45px"> 60 </div>
-                            <div class="bar-block" style="height: 90px; left:85px"> 90 </div>
-                            <div class="bar-block" style="height: 110px; left:125px"> 110 </div>
-                            <div class="bar-block" style="height: 20px; left:165px"> 20 </div>
+                             <div id="carb" class="bar-block" style="height: 17.5px; align:center"> 17.5 </div>        
                         </div>
                     </div>
                 </div>
                 <div class="row ">
                     <div class="col-md-12 ">
-                        <button id="add" class="btn btn-primary "> Add Oil! </button>
+                        <button id="add" class="btn btn-primary "> How much more for an extra apple? </button>
                     </div>
                 </div>
                 <style>
                     .bar-block {
                         background-color: #8286f4;
                         color: white;
-                        text-align: right;
+                        text-align: center;
                         margin-top: 5px;
                         margin-bottom: 5px;
+                        margin-left:35px;
                         position: absolute;
-                        width: 30px;
+                        width: 70px;
                         bottom: 0;
                     }
                     
                     .chart {
                         position: relative;
-                        width: 300px;
-                        height: 200px;
+                        width: 160px;
+                        height: 150px;
                         border: 1px solid;
                         margin-bottom: 10px;
                     }
@@ -147,40 +144,19 @@
                 <script>
                     $(function() {
                         $('#add').click(function() {
-                            // Note 1: map() method lets you execute a function on all matched elements
-                            $('.bar-block').map(function() {
-                                // Note 2: $(this) refers to the current match element
-                                // Note 3: Deal with string/ number conversion
-                                $(this).text($(this).text() * 1 + 5);
-                                // Note 4: Deal with the "px" unit in CSS property value
+                            $('#carb').map(function() {
+                                $(this).text($(this).text() * 1 + 17.5);
                                 var height_px = $(this).css('height');
                                 var height = height_px.substr(0, height_px.length - 2);
-                                $(this).css('height', (height * 1 + 5) + 'px');
-                            });
+                                $(this).css('height', (height * 1 + 5) + '17px');
+                            }
+                            
+                            );
                         });
                     });
+                
+                
                 </script>
 
-                <h2>Move the bar chart with animation</h2>
-                <div class="row ">
-                    <div class="col-md-12 ">
-                        <button id="add-animate" class="btn btn-primary "> Add Oil! </button>
-                    </div>
-                </div>
-                <script>
-                    $(function() {
-                        $('#add-animate').click(function() {
-                            $('.bar-block').map(function() {
-                                $(this).text($(this).text() * 1 + 20);
-                                $(this).animate({
-                                    height: '+=20',
-                                }, 500);
-                            });
-                        });
-                    });
-                </script>
-            </div>
-        </div>
-    </div>
-
+                
 </body></html>
